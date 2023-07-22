@@ -1,9 +1,6 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Application {
 
@@ -21,7 +18,7 @@ public class Application {
         columns.add(age);
         columns.add(salary);
         db.createTable(tableName,columns);
-        Map<Column,Object> columnValues = new HashMap ();
+        Map<Column,Object> columnValues = new LinkedHashMap();
         columnValues.put(name, "John");
         columnValues.put(age, 25);
         columnValues.put(salary, 10000);

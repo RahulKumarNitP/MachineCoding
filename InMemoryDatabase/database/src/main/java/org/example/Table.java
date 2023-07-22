@@ -1,15 +1,12 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Table {
 
     private Integer autoIncrementId;
     private String name;
-    private Map<String,Column> columnMap = new HashMap ();
+    private Map<String,Column> columnMap = new LinkedHashMap<>();
     List<Row> rows = new ArrayList ();
 
     public Table(String tableName, List<Column> columns) {
@@ -30,8 +27,7 @@ public class Table {
             if(!checkIfColumnExists(column.getColumnName())) return;
         }
         Integer rowId = getAutoIncrementId();
-        //Map<Column, Object> columnData = new HashMap (columnValues);
-        Row row = new Row(rowId, columnValues);
+        Row row = new Row(rowId, new LinkedHashMap<>(columnValues));
         this.rows.add(row);
     }
 
