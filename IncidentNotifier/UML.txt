@@ -1,0 +1,29 @@
++----------------+      +-----------------+
+| Incident       |      | Notification    |
+|----------------|      |-----------------|
+| id: String     |      | id: String      |
+| type: String   |      | incidentId: String |
+| details: String|      | message: String |
++----------------+      +-----------------+
+^                        ^
+|                        |
++----------------+       +-----------------+
+| IncidentDetector|      | Notifier        |
+|----------------|      |-----------------|
+| detect(): void |      | notify(): void  |
++----------------+      +-----------------+
+^                        ^
+|                        |
++----------------+      +-----------------+
+| IncidentQueue  |      | NotificationChannel |
+|----------------|      |-----------------|
+| incidents: Queue|     | sendNotification(): void |
+| addIncident(): void | +-----------------+
+| processIncidents(): void |        ^
++----------------+            |
++-----------------+
+| EmailChannel   |
+| SMSChannel     |
+|-----------------|
+| sendNotification(): void |
++-----------------+
