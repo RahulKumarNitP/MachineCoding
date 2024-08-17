@@ -1,3 +1,5 @@
+package FlightManagementService;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,8 +59,8 @@ public class Flight {
         List<Flight> searchResults = new ArrayList<>();
         for (Flight flight : flights) {
             if (flight.getOrigin().equalsIgnoreCase(origin) &&
-                flight.getDestination().equalsIgnoreCase(destination) &&
-                flight.getDepartureTime().startsWith(departureDate)) {
+                    flight.getDestination().equalsIgnoreCase(destination) &&
+                    flight.getDepartureTime().startsWith(departureDate)) {
                 searchResults.add(flight);
             }
         }

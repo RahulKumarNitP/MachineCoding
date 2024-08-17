@@ -1,3 +1,5 @@
+package FlightManagementService;
+
 // Fare class representing a fare type for a flight
 class Fare {
     private String fareType;
